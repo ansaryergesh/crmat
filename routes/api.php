@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('banks', 'BankController@index');
+Route::get('banks/{id}', 'BankController@getBank');
+Route::post('banks', 'BankController@createBank');
+Route::put('banks/{id}', 'BankController@updateBank');
+Route::delete('banks/{id}', 'BankController@deleteBank');
